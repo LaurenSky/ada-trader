@@ -1,6 +1,32 @@
 import $ from 'jquery';
 import _ from 'underscore';
+
 import ApplicationView from 'app/views/application_view';
+// import QuoteView from 'app/views/quote_view';
+
+var quoteData = [
+  {
+    symbol: 'HUMOR',
+    name: "Cristal's HumorUs capstone",
+    price: 88.50
+  }, {
+    symbol: 'CLOTH',
+    name: "Sophia's Cloth Sim capstone",
+    price: 81.70
+  }, {
+    symbol: 'SUPER',
+    name: "Rowan's Super Hero Draft capstone",
+    price: 83.10
+  }, {
+    symbol: 'FUZZY',
+    name: "Jade's Fuzz Therapy capstone",
+    price: 88.60
+  }, {
+    symbol: 'EVCLR',
+    name: "Lisa's Evolution In Color capstone",
+    price: 101.90
+  }
+];
 
 const simulate = function(quote) {
   // Calculate a random price movement
@@ -19,7 +45,8 @@ const simulate = function(quote) {
 
 $(document).ready(function() {
   var appView = new ApplicationView({
-    el: '#application'
+    el: '#application',
+    quoteData: quoteData
   });
 
   appView.render();
